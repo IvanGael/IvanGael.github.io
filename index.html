@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>IvanGael.github.io</title>
+  <link rel="shortcut icon" href="https://cdn.rawgit.com/jgthms/bulma/master/docs/favicons/favicon-32x32.png"
+    type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.0/css/bulma.min.css" />
+  <link rel='stylesheet' type="text/css" href="./css/prism.css">
+  <link rel="stylesheet" type="text/css" href="./css/cheatsheet.css">
+  <link rel="stylesheet" href="./css/object_detection.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="columns">
+        <div class="column is-12">
+          <div class="container has-text-centered content">
+            <i class="is-large fas fa-code"></i>
+            <h1 class="title">Hi <em>here!</em></h1>
+            <h3 class="subtitle is-size-6">
+              I'm a Software Engineer and I have a lot of interest in the following topics : Web/Mobile, Machine
+              Learning and AI
+            </h3>
+            <a class="github-button" href="https://github.com/IvanGael/IvanGael" data-size="large"
+              aria-label="View IvanGael on GitHub">View on Github</a>
+            <a class="github-button" href="https://github.com/IvanGael/IvanGael" data-icon="octicon-star"
+              data-size="large" data-show-count="true"
+              aria-label="Star BulmaTemplates/bulma-templates on GitHub">Star</a>
+            <a class="github-button" href="https://github.com/IvanGael/IvanGael/fork" data-size="large"
+              data-show-count="true" aria-label="Fork IvanGael on GitHub">Fork</a>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div id="videoContainer">
+            <video id="videoElement" autoplay playsinline></video>
+            <canvas id="canvas"></canvas>
+            <div id="waitingMessage" class="waiting-message">Wait, identifying object...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container has-text-black">
+      <h2 class="has-text-weight-bold is-size-4" id="stacks">Stacks</h2>
+      <div class="columns is-multiline">
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content has-text-centered">
+              <a href="https://reactjs.org/">
+                <img
+                  src="https://img.shields.io/static/v1?label=&message=React&color=61DAFB&logo=react&logoColor=FFFFFF"
+                  width="100" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content has-text-centered">
+              <a href="https://www.ultralytics.com/fr">
+                <img
+                  src="https://assets-global.website-files.com/646dd1f1a3703e451ba81ecc/6499468f33db295c5a1219ec_Ultralytics_mark_blue.svg"
+                  width="30" height="30" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content has-text-centered">
+              <a href="https://nodejs.org/">
+                <img
+                  src="https://img.shields.io/static/v1?label=&message=Node.js&color=339933&logo=nodedotjs&logoColor=FFFFFF"
+                  width="100" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content has-text-centered">
+              <a href="https://go.dev/">
+                <img src="https://img.shields.io/static/v1?label=&message=Go&color=007d9c&logo=go&logoColor=FFFFFF"
+                  width="100" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content has-text-centered">
+              <a href="https://flask.palletsprojects.com/en/3.0.x/">
+                <img
+                  src="https://img.shields.io/static/v1?label=&message=Flask&color=61DEFB&logo=flask&logoColor=FFFFFF"
+                  width="100" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content has-text-centered">
+              <a href="https://flutter.dev/">
+                <img
+                  src="https://img.shields.io/static/v1?label=&message=Flutter&color=01DAFB&logo=flutter&logoColor=FFFFFF"
+                  width="100" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content has-text-centered">
+              <a href="https://opencv.org/">
+                <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" width="100"
+                  style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content has-text-centered">
+              <a href="https://www.docker.com/">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg"
+                  width="100" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content has-text-centered">
+              <a href="https://cloud.google.com">
+                <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" width="100"
+                  style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content has-text-centered">
+              <a href="https://firebase.google.com/">
+                <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" width="100"
+                  style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="has-text-weight-bold is-size-4" id="fun">Fun 🙂</h2>
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/gradient_based_onboarding.gif"
+                  alt="Gradient based Onboarding UI" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Gradient based Onboarding UI</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/bottomsheet_based_onboarding.gif"
+                  alt="Bottomsheet based Onboarding UI" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Bottomsheet based Onboarding UI</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/cinema_based_onboarding.gif"
+                  alt="Cinema based Onboarding UI" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Cinema based Onboarding UI</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/whatsapp_onboarding.gif"
+                  alt="Whatsapp Onboarding UI" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Whatsapp Onboarding UI</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/particles_based_splash.gif"
+                  alt="Particles based Splash UI" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Particles based Splash UI</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/signin1.gif"
+                  alt="Signin UI" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Signin UI</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/countdown_card_timer.gif"
+                  alt="CountDown card timer" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">CountDown card timer</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/dino_game.gif"
+                  alt="Dino game" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Dino game</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/dragonball_fight_anim.gif"
+                  alt="Dragon ball fight animation" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Dragon ball fight animation</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/elevator_sim.gif"
+                  alt="Elevator simulation" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Elevator simulation</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/function_rep_curve.gif"
+                  alt="Function curve tracer" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Function curve tracer</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/snake_game.gif"
+                  alt="Snake game" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Snake game</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/himalayas_job_app.gif"
+                  alt="Himalayas job app UI" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Himalayas job app UI</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/maze_game.gif"
+                  alt="Maze game" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Maze game</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/memory_match_game.gif"
+                  alt="Memory match game" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Memory match game</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/signin_signup1.gif"
+                  alt="Signin-Signup UI" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Signin-Signup UI</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/blur_effect.gif"
+                  alt="Blur effect" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Blur effect</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/pinball_game.gif"
+                  alt="Pinball" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Pinball</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/wallpaper_generator.gif"
+                  alt="Wallpaper generator" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Wallpaper generator</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/whack_mole_game.gif"
+                  alt="Whack mole game" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Whack mole game</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/text_masking_anim.gif"
+                  alt="Text masking animation" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Text masking animation</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/sharigan_to_mangekyou.gif"
+                  alt="Sharigan to mangekyou animation" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Sharigan to mangekyou animation</p>
+              <a href="https://github.com/IvanGael/flutter-funs/blob/main/lib/sharingan_to_mangekyou_screen.dart">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/text_typewriter_anim.gif"
+                  alt="Text typewriter animation" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Text typewriter animation</p>
+              <a href="https://github.com/IvanGael/flutter-funs/blob/main/lib/typewriter_text_animation.dart">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/sharing_eye_anim.gif"
+                  alt="Sharigan eye animation" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Sharigan eye animation</p>
+              <a href="https://github.com/IvanGael/flutter-funs/blob/main/lib/eye_modeling.dart">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/atdr.gif"
+                  alt="Automate drawing app" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Automate drawing app</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/lemon-chck.gif"
+                  alt="Glass filling up" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Glass filling up</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/stpch.gif"
+                  alt="Stopwatch" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Stopwatch</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/g_im.gif"
+                  alt="Gallery images" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Gallery images</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/scning.gif"
+                  alt="Scanning animation" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Scanning animation</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/fdst.gif"
+                  alt="Food store UI" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Food store UI</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://github.com/IvanGael/IvanGael/assets/75835662/ddc02193-2221-4fb7-8330-17367e8c8c49"
+                  alt="Countdown timer with dynamic color changes" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Countdown timer with dynamic color changes</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://github.com/IvanGael/IvanGael/assets/75835662/b8133469-78f6-481b-8694-658e92714ba4"
+                  alt="Gallery carousel" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Gallery carousel</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/flip_book.gif"
+                  alt="A flip book animation transitioning between images." style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">A flip book animation transitioning between images</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://github.com/IvanGael/IvanGael/assets/75835662/efb57e14-0da8-4ee5-af93-5466d7312b5c"
+                  alt="Interactive plate menu" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Interactive plate menu</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://github.com/IvanGael/IvanGael/assets/75835662/f004c95f-9f39-4cde-8ac0-b7daa8b1033b"
+                  alt="Zoom on image" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Zoom on image</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://github.com/IvanGael/IvanGael/assets/75835662/198c0477-0db5-469b-8a0f-21255a1f593a"
+                  alt="Pan across a panoramic image" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Pan across a panoramic image</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://github.com/IvanGael/IvanGael/assets/75835662/3226240c-0361-4cac-87e1-529289d58ebf"
+                  alt="Parallax autoScrolling" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Parallax autoScrolling</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://github.com/IvanGael/IvanGael/assets/75835662/40f665a6-f0e1-4039-9aef-2a57aa9a54ff"
+                  alt="World countries" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">World countries</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://github.com/IvanGael/IvanGael/assets/75835662/e40c1a6e-3cc3-4d4a-bd47-cbc7027f2abb"
+                  alt="Music playing animated gradient background" style="object-fit: contain;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-6">Music playing animated gradient background</p>
+              <a href="https://github.com/IvanGael/flutter-funs">
+                <img
+                  src="https://github-readme-stats.vercel.app/api/pin/?username=IvanGael&repo=flutter-funs&theme=tokyonight"
+                  alt="Flutter funs" style="object-fit: contain;">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-multiline">
+        <div class="column is-two-quarter">
+          <figure class="image is-3by1">
+            <a href="https://github-readme-stats.vercel.app/api?username=IvanGael&amp;show_icons=true&amp;count_private=true&amp;hide_title=false&amp;theme=tokyonight"
+              target="_blank">
+              <img
+                src="https://github-readme-stats.vercel.app/api?username=IvanGael&amp;show_icons=true&amp;count_private=true&amp;hide_title=false&amp;theme=tokyonight"
+                alt="IvanGael&#39;s GitHub stats" style="object-fit: contain;">
+            </a>
+          </figure>
+        </div>
+
+        <div class="column is-two-quarter">
+          <figure class="image is-3by1">
+            <a href="https://github-readme-stats.vercel.app/api/top-langs/?username=IvanGael&amp;show_icons=true&amp;locale=en&amp;layout=compact&amp;theme=tokyonight"
+              target="_blank">
+              <img
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=IvanGael&amp;show_icons=true&amp;locale=en&amp;layout=compact&amp;theme=tokyonight"
+                alt="Top Langs" style="object-fit: contain;">
+            </a>
+          </figure>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <hr>
+    <div class="columns is-mobile is-centered">
+      <div class="field is-grouped is-grouped-multiline">
+        <div class="control">
+          <div class="tags has-addons"><a class="tag is-link"
+              href="https://github.com/BulmaTemplates/bulma-templates">Built with</a>
+            <span class="tag is-info">Bulma</span>
+          </div>
+        </div>
+        <div class="control">
+          <div class="tags has-addons">
+            <span class="tag is-dark">
+              <script>document.write(new Date().getFullYear())</script>
+            </span>
+            <span class="tag has-addons is-success">&copy;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  <script src="script/object_detection.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
+  <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</body>
+
+</html>
