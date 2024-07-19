@@ -2,4 +2,4 @@
 Github webpage profile
 
 ## Licence
-Code released under ![the MIT license](LICENSE).
+Code released under [the MIT license](LICENSE).
