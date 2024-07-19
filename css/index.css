@@ -3,12 +3,12 @@
 }
 
 @font-face {
-  font-family: 'Nexa';
-  src: url('./css/fonts/Nexa-Heavy.ttf') format('truetype');
+  font-family: 'Rubik';
+  src: url('./css/fonts/Rubik-Bold.ttf') format('truetype');
 }
 
 html, body {
-  font-family: 'Nexa', sans-serif;
+  font-family: 'Rubik', sans-serif;
   background:  #DCDCDC;
 }
 .card {
