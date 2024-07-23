@@ -3,13 +3,13 @@
 }
 
 @font-face {
-  font-family: 'Rubik';
-  src: url('./css/fonts/Rubik-Bold.ttf') format('truetype');
+  font-family: 'Nexa';
+  src: url('./css/fonts/Nexa-Heavy.ttf') format('truetype');
 }
 
 html, body {
-  font-family: 'Rubik', sans-serif;
-  background:  #DCDCDC;
+  font-family: 'Nexa', sans-serif;
+  background:  #ffffff;
 }
 .card {
   margin-bottom: 3rem;
