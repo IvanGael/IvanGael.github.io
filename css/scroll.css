@@ -1,0 +1,12 @@
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+    scrollbar-width: none;
+}
+
+/* .column2 {
+    flex: 0 0 auto;
+    margin-right: 25px;
+} */
